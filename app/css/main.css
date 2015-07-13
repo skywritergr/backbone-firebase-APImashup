@@ -1,0 +1,38 @@
+#movies{
+    float: left;
+    margin: 0 auto;
+}
+
+#watched{
+    float: left;
+    margin-left: 40px;
+}
+
+#fullMovie {
+    float: left;
+    display: inline-flex;
+    margin-top : 30px;
+}
+
+#fullMovie img{
+    float: left;
+    margin-right: 20px;
+}
+
+#fullMovie ul{
+    list-style: none;
+}
+
+#fullMovie ul li{
+    margin-top: 5px;
+}
+
+#fullMovie ul li p{
+    margin: 0;
+    display: inline;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+}
