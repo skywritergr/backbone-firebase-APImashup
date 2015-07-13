@@ -5,18 +5,15 @@ define(['underscore', 'jquery', 'backbone', 'views/movieView', 'views/watchedMov
             // Define routes
             routes: {
                 "": "home",
-                "movie" : "movie",
                 "movie/:id": "movie"
             },
 
             home : function(){
-                console.log('Navigating to homepage');
                 new MovieView();
                 new WatchedMovieView();
             },
 
             movie : function(id){
-                console.log('Hello movie11 '+id);
                 new FullMovieView({url : 'http://www.omdbapi.com/?i='+id});
             }
         });

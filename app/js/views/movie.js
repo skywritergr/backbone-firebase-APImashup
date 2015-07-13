@@ -1,3 +1,6 @@
+//This file is used to represent individual movies by the movieView.js.
+//The functionality of this file is very similar to the watchedMovie.js
+
 define(['underscore', 'jquery', 'backbone', 'text!../../templates/mainView.html', '../collections/firebaseCollection'], function(_, $, Backbone, mainView, firebaseCollection){
     var movieView = Backbone.View.extend({
         tagName: 'div',
@@ -15,12 +18,9 @@ define(['underscore', 'jquery', 'backbone', 'text!../../templates/mainView.html'
         },
 
         movieWatched: function() {
-            if(this.model.get('watched')){
-                this.model.destroyModel();
-            } else {
-                this.model.watched();
-                this.collection.create(this.model);
-            }
+            //ading movie the our watched list
+            this.model.watched();
+            this.collection.create(this.model);
         },
 
         render: function() {

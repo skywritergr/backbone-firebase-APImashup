@@ -1,3 +1,4 @@
+//this is the main view that holds all the new unwatched movies. This view is taking data from the omdbAPI.
 define(['jquery', 'underscore', 'backbone', 'views/movie', '../collections/movieCollection'], function($, _, Backbone, movie, Collection){
     var MovieView = Backbone.View.extend({
         el: '#movies',
@@ -17,7 +18,7 @@ define(['jquery', 'underscore', 'backbone', 'views/movie', '../collections/movie
             this.listenTo( this.collection, 'remove', this.render );
         },
 
-        // render library by rendering each book in its collection
+        // render collection by rendering each movie in the collection
         render: function() {
             this.collection.each(function( item ) {
                 this.renderMovie( item );

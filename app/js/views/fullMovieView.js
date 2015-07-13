@@ -1,5 +1,7 @@
-define(['underscore', 'jquery', 'backbone', 'text!../../templates/fullMovieView.html', '../collections/fullMovieCollection', 'views/movieView', 'views/watchedMovieView'],
-    function(_, $, Backbone, mainView, fullMovieCollection, movieView, watchedMovieView){
+//This view is used to display the full information of our movie when we click on a link.
+
+define(['underscore', 'jquery', 'backbone', 'text!../../templates/fullMovieView.html', '../collections/fullMovieCollection'],
+    function(_, $, Backbone, mainView, fullMovieCollection){
         var fullMovieView = Backbone.View.extend({
             tagName: 'div',
             className: 'watchedMovieContainer',
@@ -32,7 +34,6 @@ define(['underscore', 'jquery', 'backbone', 'text!../../templates/fullMovieView.
             renderMovie: function( item ) {
                 this.model = item;
                 this.$el.html( this.template( this.model.attributes ) );
-                //this.$el.append( this.render().el );
             }
         });
 

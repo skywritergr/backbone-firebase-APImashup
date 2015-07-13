@@ -1,3 +1,5 @@
+//This is the main view for all the watched movies. This view is taking its data from the firebase API.
+
 define(['underscore', 'jquery', 'backbone', 'views/watchedMovie', '../collections/firebaseCollection'], function(_, $, Backbone, movie, firebaseCollection){
     var bookView = Backbone.View.extend({
         el: '#watched',

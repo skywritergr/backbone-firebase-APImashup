@@ -1,6 +1,5 @@
+//RequireJS configuration to give shortcut names to our libraries
 require.config({
-    // your configuration key/values here
-    // baseUrl: '/app/', // generally the same directory as the script used in a data-main attribute for the top level script
     paths: {
         'underscore' : '../components/underscore/underscore-min',
         'backbone' : '../components/backbone/backbone-min',
