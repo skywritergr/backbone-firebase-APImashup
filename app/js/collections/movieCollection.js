@@ -2,7 +2,7 @@ define(['backbone', 'models/movie', 'firebase', 'backbonefire'], function(Backbo
     var MovieCollection = Backbone.Collection.extend({
         model: Movie,
 
-        url : 'http://www.omdbapi.com/?s=lord&type=movie',
+        url : 'https://www.omdbapi.com/?s=lord&type=movie',
 
         parse: function( response ) {
             return response.Search;
