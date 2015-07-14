@@ -14,7 +14,7 @@ define(['underscore', 'jquery', 'backbone', 'views/movieView', 'views/watchedMov
             },
 
             movie : function(id){
-                new FullMovieView({url : 'http://www.omdbapi.com/?i='+id});
+                new FullMovieView({url : 'https://www.omdbapi.com/?i='+id});
             }
         });
 
