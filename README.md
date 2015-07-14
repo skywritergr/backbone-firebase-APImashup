@@ -16,8 +16,8 @@ Navigate to the server folder and run node server.js. Then navigate to localhost
 
 Or access them here:
 
-[App](https://piscine-choucroute-6594.herokuapp.com/)
-[Tests](https://piscine-choucroute-6594.herokuapp.com/tests/SpecRunner.html#)
+* [App](https://piscine-choucroute-6594.herokuapp.com/)
+* [Tests](https://piscine-choucroute-6594.herokuapp.com/tests/SpecRunner.html#)
 
 
 ** Please note that the omdbAPI can be slow at times. Refreshing seems to solve any intermediate problems ** 
