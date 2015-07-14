@@ -26,6 +26,7 @@ define(['underscore', 'jquery', 'backbone', 'views/movieView', 'views/watchedMov
         };
 
         return {
-            initialize: initialize
+            initialize: initialize,
+            router : router
         };
 });

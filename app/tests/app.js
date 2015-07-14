@@ -1,12 +1,15 @@
 //RequireJS configuration to give shortcut names to our libraries
 require.config({
+    baseUrl: '../js/',
     paths: {
         'underscore' : '../components/underscore/underscore-min',
         'backbone' : '../components/backbone/backbone-min',
         'jquery' : '../components/jquery/dist/jquery.min',
         'text' : '../components/text/text',
         'firebase' : '../components/firebase/firebase',
-        'backbonefire' : '../components/backbonefire/dist/backbonefire'
+        'backbonefire' : '../components/backbonefire/dist/backbonefire',
+        'jasmine' : '../tests/lib/jasmine-1.3.1/jasmine',
+        'jasmine-html' : '../tests/lib/jasmine-1.3.1/jasmine-html'
 
     },
     shim: {
@@ -26,6 +29,13 @@ require.config({
         backbonefire: {
             deps: ['firebase', 'backbone'],
             exports: 'backbonefire'
+        },
+        jasmine : {
+            exports : 'jasmine'
+        },
+        'jasmine-html' : {
+            deps: ['jasmine'],
+            exports: 'jasmine'
         }
     }
 });
@@ -38,24 +48,29 @@ require(
         'text',
         'firebase',
         'backbonefire',
-        'routers/router'
+        'jasmine-html'
     ],
-    function($, _, B, text, firebase, backbonefire, Router) {
-        $(function() {
-            //the close function is a way to avoid zombie views in Backbone.
-            //Those zombie views can cause all sort of functional problems or
-            //memory leaks.
-            Backbone.View.prototype.close = function(){
-                this.remove();
-                this.unbind();
-                //every time a view implements the onClose function it will run
-                //this is an excellent way to run custom code when closing a view.
-                if (this.onClose){
-                    this.onClose();
-                }
-            };
+    function($, _, B, text, firebase, backbonefire, jasmine) {
+        var jasmineEnv = jasmine.getEnv();
+        jasmineEnv.updateInterval = 1000;
 
-            Router.initialize();
+        var htmlReporter = new jasmine.HtmlReporter();
+
+        jasmineEnv.addReporter(htmlReporter);
+
+        jasmineEnv.specFilter = function(spec) {
+            return htmlReporter.specFilter(spec);
+        };
+
+        var specs = [];
+
+        specs.push('../tests/spec/ModelTestSpec');
+        specs.push('../tests/spec/RouterTestSpec');
+
+        $(function() {
+            require(specs, function(){
+                jasmineEnv.execute();
+            });
         });
     }
 );

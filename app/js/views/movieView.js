@@ -1,3 +1,7 @@
+if (typeof define !== 'function') {
+    var define = require('amdefine')(module);
+}
+
 //this is the main view that holds all the new unwatched movies. This view is taking data from the omdbAPI.
 define(['jquery', 'underscore', 'backbone', 'views/movie', '../collections/movieCollection'], function($, _, Backbone, movie, Collection){
     var MovieView = Backbone.View.extend({
