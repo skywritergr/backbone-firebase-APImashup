@@ -1,6 +1,10 @@
+if (typeof define !== 'function') {
+    var define = require('amdefine')(module);
+    var text = require('requirejs-text');
+}
+
 //This file is used to represent individual movies by the movieView.js.
 //The functionality of this file is very similar to the watchedMovie.js
-
 define(['underscore', 'jquery', 'backbone', 'text!../../templates/mainView.html', '../collections/firebaseCollection'], function(_, $, Backbone, mainView, firebaseCollection){
     var movieView = Backbone.View.extend({
         tagName: 'div',
