@@ -1,3 +1,28 @@
+body{
+    font-family: Calibri, Helvetica, Arial;
+    background-color: ;
+}
+
+#wrapper {
+    margin: 0 auto;
+    width: 80%;
+}
+
+#topRow {
+    width: 100%;
+    float: left;
+}
+
+#topRow a{
+    text-decoration: none;
+    color: black;
+}
+
+#topRow a:hover{
+    text-decoration: overline;
+    color: #e17e1a;
+}
+
 #movies{
     float: left;
     margin: 0 auto;
@@ -10,8 +35,11 @@
 
 #fullMovie {
     float: left;
+    width: 100%;
     display: inline-flex;
     margin-top : 30px;
+    border-top: solid 1px;
+    padding-top: 10px;
 }
 
 #fullMovie img{
@@ -21,6 +49,7 @@
 
 #fullMovie ul{
     list-style: none;
+    max-width: 600px;
 }
 
 #fullMovie ul li{
@@ -34,5 +63,9 @@
 }
 
 h2 {
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+}
+
+.center {
     text-align: center;
 }

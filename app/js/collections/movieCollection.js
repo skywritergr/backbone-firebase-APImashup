@@ -5,7 +5,6 @@ define(['backbone', 'models/movie', 'firebase', 'backbonefire'], function(Backbo
         url : 'http://www.omdbapi.com/?s=lord&type=movie',
 
         parse: function( response ) {
-            console.log(response);
             return response.Search;
         }
     });

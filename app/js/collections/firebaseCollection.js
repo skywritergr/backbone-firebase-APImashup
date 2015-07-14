@@ -5,7 +5,6 @@ define(['backbone', 'models/movie', 'firebase', 'backbonefire'], function(Backbo
         model: Movie,
 
         parse: function( response ) {
-            console.log(response);
             return response.Search;
         }
     });

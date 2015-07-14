@@ -9,7 +9,8 @@ require.config({
         'firebase' : '../components/firebase/firebase',
         'backbonefire' : '../components/backbonefire/dist/backbonefire',
         'jasmine' : '../tests/lib/jasmine-1.3.1/jasmine',
-        'jasmine-html' : '../tests/lib/jasmine-1.3.1/jasmine-html'
+        'jasmine-html' : '../tests/lib/jasmine-1.3.1/jasmine-html',
+        'sinon' : '../tests/lib/jasmine-1.3.1/sinon'
 
     },
     shim: {
@@ -36,7 +37,11 @@ require.config({
         'jasmine-html' : {
             deps: ['jasmine'],
             exports: 'jasmine'
+        },
+        sinon : {
+            exports: 'sinon'
         }
+
     }
 });
 
@@ -48,9 +53,10 @@ require(
         'text',
         'firebase',
         'backbonefire',
-        'jasmine-html'
+        'jasmine-html',
+        'sinon'
     ],
-    function($, _, B, text, firebase, backbonefire, jasmine) {
+    function($, _, B, text, firebase, backbonefire, jasmine, sinon) {
         var jasmineEnv = jasmine.getEnv();
         jasmineEnv.updateInterval = 1000;
 
@@ -66,6 +72,7 @@ require(
 
         specs.push('../tests/spec/ModelTestSpec');
         specs.push('../tests/spec/RouterTestSpec');
+        specs.push('../tests/spec/firebaseCollectionTestSpec');
 
         $(function() {
             require(specs, function(){
